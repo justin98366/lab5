@@ -48,9 +48,9 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
   var answerSumAb = sum(a,b)[0];
-  var answerSumAbc = answerSumAb + c;
+  var answerSumAbc = sum(answerSumAb,c)[0];
   var answerMultiplyAb = multiply(a,b)[0];
-  var answerMultiplyAbc = answerMultiplyAb * c;
+  var answerMultiplyAbc = multiply(answerMultiplyAb, c)[0];
   var solution = [answerSumAbc, answerMultiplyAbc, a + ' and ' + b + ' and ' + c + ' sum to ' + answerSumAbc + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + answerMultiplyAbc + '.'];
   console.log(solution);
   return solution;
@@ -72,12 +72,16 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2,3,4]; //eslint-disable-line
 
 function sumArray(testArray){ //eslint-disable-line
-
+  var addArray = sum(testArray[0],testArray[1])[0];
+  var answerArray = sum(addArray, testArray[2])[0];
+  var solution = [answerArray, testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + answerArray + ' is their sum.'];
+  console.log(solution);
+  return solution;
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
